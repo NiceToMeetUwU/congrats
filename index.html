@@ -1,9 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        <p>This is an example of a simple HTML page with one paragraph.</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恭喜你ㄚ</title>
+    <link rel="stylesheet" href="aaa.css">
+    <script src="aaa.js"></script>
+</head>
+<body>
+    
+    <!--魔改自大二網頁期中project-->
+    <div class="wrap">
+        
+        <div class="banner">
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&themeRefresh=1" title="測試超連結"><img id="piyan" src="hahapiyan.JPG" width="250" height="250" ></a>
+          <!-- <a href="bless_u.html" title="測試超連結"><img id="piyan2" src="hahapiyan.JPG" width="250" height="250" ></a> -->
+          <h3 id="copy"></h3>
+          <!-- <div id="option"></div> -->
+          <video autoplay muted loop>
+            <source src="aaa.mp4" type="video/mp4">
+          </video>
+          
+          <h2>ha ha piyan</h2>
+          
+        </div>
+    </div>
+      <script>
+        const img = document.getElementById('piyan');
+
+        console.log(copy);
+        var x=-500;
+        var xspeed=10;
+        var y=-750;
+        var yspeed =10;
+        /*shift偵測邊界的直怪怪的是因為在css裡我把所有東西都置中了*/
+        function shift(){
+          if(x>((window.innerWidth/2)-125)){/*如果圖片越大值要越大(碰撞偵測為圖片中心點)*/
+            xspeed=-10;
+          }
+          if(x<((window.innerWidth/2)-window.innerWidth+125)){
+            xspeed=10;
+          }
+          if(y>((window.innerHeight/2))-125){
+            yspeed=-10;
+          }
+          if(y<((window.innerHeight/2))-window.innerHeight+125){
+            yspeed=10;
+          }
+          x+=xspeed;
+          y+=yspeed;
+
+          img.style.left=x+"px";
+          img.style.top =y+"px";
+          setTimeout("shift()",20);
+        }
+        shift();
+
+      </script>
+</body>
 </html>
